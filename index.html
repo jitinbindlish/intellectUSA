@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bank USA - Small Business Financing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+       /* General Styles - Reduced Spacing, New Color Scheme */
+        body {
+            font-family: 'Roboto', sans-serif; /* More modern font */
+            line-height: 1.6; /* Slightly reduced */
+            color: #444; /* Darker grey */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px; /* Reduced */
+            background-color: #f5f5f5; /* Off-white background */
+        }
+
+        /* Header */
+        header {
+            background-color: #2e7d32; /* Deep Green */
+            color: white;
+            padding: 35px 20px; /* Reduced */
+            text-align: left;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12); /* Reduced */
+            position: relative;
+        }
+
+        /* Remove the logo image */
+        header img {
+            display: none;
+        }
+
+        header h1 {
+            font-size: 2.8rem; /* Reduced */
+            margin-bottom: 0.4rem; /* Reduced */
+            font-weight: 700;
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            padding: 15px; /* Reduced */
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 25px; /* Reduced */
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); /* Reduced */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 25px; /* Reduced */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 1rem; /* Reduced */
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #2e7d32;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #e5f0e7; /* Light Green */
+            text-align: left;
+            padding: 50px 30px; /* Reduced */
+            border-radius: 8px; /* Reduced */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Reduced */
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h2 {
+            color: #2e7d32;
+            margin-bottom: 20px; /* Reduced */
+            font-size: 2.4rem; /* Reduced */
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.15rem; /* Reduced */
+            color: #555;
+            margin-bottom: 35px; /* Reduced */
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            background-color: #00897b; /* Darker Teal */
+            color: white;
+            padding: 14px 28px; /* Reduced */
+            text-decoration: none;
+            border-radius: 6px; /* Reduced */
+            display: inline-block;
+            margin-top: 20px; /* Reduced */
+            font-weight: 500;
+            font-size: 1rem; /* Reduced */
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #00695c; /* Even Darker */
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Reduced */
+            gap: 25px; /* Reduced */
+            margin-top: 35px; /* Reduced */
+        }
+
+        .product-card {
+            border: none;
+            padding: 30px; /* Reduced */
+            border-radius: 10px; /* Reduced */
+            background-color: #fff;
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1); /* Reduced */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px); /* Reduced */
+        }
+
+        .product-card h3 {
+            color: #2e7d32;
+            margin-bottom: 15px; /* Reduced */
+            font-size: 1.5rem; /* Reduced */
+            font-weight: 600;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5; /* Reduced */
+        }
+
+        /* Term Loan Details */
+        #term-loan-details {
+            margin-top: 45px; /* Reduced */
+            padding: 40px; /* Reduced */
+            background-color: #fff;
+            border-radius: 10px; /* Reduced */
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1); /* Reduced */
+        }
+
+        #term-loan-details h2 {
+            color: #2e7d32;
+            font-size: 2.2rem; /* Reduced */
+            margin-bottom: 20px; /* Reduced */
+        }
+
+        #term-loan-details p {
+            font-size: 1.1rem;
+            line-height: 1.7; /* Reduced */
+            color: #555;
+            margin-bottom: 20px; /* Reduced */
+        }
+
+        #term-loan-details ul {
+            list-style-type: disc;
+            padding-left: 25px; /* Reduced */
+        }
+
+        #term-loan-details li {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5; /* Reduced */
+            margin-bottom: 8px; /* Reduced */
+        }
+
+        /* About Section */
+        #about {
+            margin-top: 45px; /* Reduced */
+            padding: 40px; /* Reduced */
+            background-color: #e5f0e7; /* Light Green */
+            border-radius: 10px; /* Reduced */
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1); /* Reduced */
+        }
+
+        #about h2 {
+            color: #2e7d32;
+            font-size: 2.2rem; /* Reduced */
+            margin-bottom: 20px; /* Reduced */
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            line-height: 1.7; /* Reduced */
+        }
+
+        /* Contact Section */
+        #contact {
+            margin-top: 45px; /* Reduced */
+            padding: 40px; /* Reduced */
+            background-color: #fff;
+            border-radius: 10px; /* Reduced */
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1); /* Reduced */
+        }
+
+        #contact h2 {
+            color: #2e7d32;
+            font-size: 2.2rem; /* Reduced */
+            margin-bottom: 20px; /* Reduced */
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            line-height: 1.7; /* Reduced */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 20px; /* Reduced */
+            margin-top: 45px; /* Reduced */
+            border-radius: 8px; /* Reduced */
+        }
+
+        /* Specific adjustments */
+        .product-card h3 a {
+            text-decoration: none;
+            color: inherit; /* Ensure the link is the same color as the heading */
+        }
+
+        /* Term Loan Options */
+        .term-loan-options {
+            margin-top: 25px; /* Reduced */
+        }
+
+        .term-loan-options a {
+            display: inline-block;
+            margin-right: 15px; /* Reduced */
+            padding: 12px 24px; /* Reduced */
+            background-color: #00897b;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px; /* Reduced */
+            font-weight: 500;
+            font-size: 1rem; /* Reduced */
+            transition: background-color 0.3s ease;
+        }
+
+        .term-loan-options a:hover {
+            background-color: #00695c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smart Bank USA</h1>
+        <p>Fueling American Small Businesses with Financial Expertise</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#products">Financing Options</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>Strategic Financing for Your Business Vision</h2>
+            <p>Unlock the capital you need to achieve your goals. Smart Bank USA offers a suite of tailored financing solutions designed for the unique needs of small businesses.</p>
+            <a href="#contact" class="cta-button">Speak to a Specialist</a>
+        </section>
+
+        <section id="products" class="product-grid">
+            <div class="product-card">
+                <h3><a href="#term-loan-details">Term Loans</a></h3>
+                <p>Secure funding to fuel your business vision. Our term loans offer fixed rates, predictable payments, and flexible repayment schedules to align with your cash flow. Use for equipment, expansion, or working capital.</p>
+            </div>
+            <div class="product-card">
+                <h3>Business Line of Credit</h3>
+                <p>Access a revolving line of credit to manage day-to-day expenses and seize opportunities.</p>
+            </div>
+            <div class="product-card">
+                <h3>SBA Loans</h3>
+                <p>Benefit from government-backed financing with our SBA loan programs.</p>
+            </div>
+            <div class="product-card">
+                <h3>Commercial Real Estate Financing</h3>
+                <p>Purchase, refinance, or renovate commercial properties with our real estate financing options.</p>
+            </div>
+            <div class="product-card">
+                <h3>Equipment Financing</h3>
+                <p>Acquire essential equipment with flexible financing solutions.</p>
+             </div>
+             <div class="product-card">
+                <h3>Business Credit Cards</h3>
+                <p>Simplify expense management and earn valuable rewards with our range of business credit cards. Choose from cards with travel perks, cash-back incentives, and more.</p>
+            </div>
+        </section>
+
+        <section id="term-loan-details">
+            <h2>Term Loan Details</h2>
+            <p>Our term loans are designed to provide businesses with the capital they need for significant investments. Here are some additional details:</p>
+            <ul>
+                <li><strong>Loan Amount:</strong> $10,000 to $1,000,000</li>
+                <li><strong>Interest Rate:</strong> Competitive rates based on your creditworthiness and the current market.</li>
+                <li><strong>Repayment Terms:</strong> Flexible repayment schedules ranging from 1 to 7 years.</li>
+                <li><strong>Ideal For:</strong> Expanding facilities, purchasing equipment, funding marketing campaigns, and other major business projects.</li>
+            </ul>
+
+            <div class="term-loan-options">
+               <a href="mailto:info@smartbankusa.com?subject=Term%20Loan%20Application&body=I%20am%20interested%20in%20applying%20for%20a%20Term%20Loan.%20Please%20find%20my%20details%20below:%0A%0AName:%20%0ABusiness%20Name:%20%0AContact%20Number:%20%0AEmail:%20%0A%0AThank%20you." target="_blank" class="term-loan-options a">Apply via Email</a>
+                <a href="#"  class="term-loan-options a">Apply Online</a>
+                <a href="https://api.whatsapp.com/send/?phone=1PHONENUMBER&text=Hello,%20I'd%20like%20to%20apply%20for%20a%20term%20loan." target="_blank"  class="term-loan-options a">Apply via WhatsApp</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Smart Bank USA</h2>
+            <p>At Smart Bank USA, we are dedicated to fueling the ambitions of small business owners across the United States. We understand the unique challenges and opportunities you face, and we're here to provide the financial solutions and guidance you need to thrive. With a commitment to personalized service and innovative financing, we empower you to build a brighter future for your business.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Reach out to our team of small business experts to explore your financing options and develop a customized plan for success.</p>
+            <p>Email: info@smartbankusa.com</p>
+            <p>Phone: 1-800-SMART-USA</p>
+            <p>Address: 123 Main Street, Anytown, USA</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Smart Bank USA. All rights reserved.</p>
+    </footer>
+</body>
+</html>
